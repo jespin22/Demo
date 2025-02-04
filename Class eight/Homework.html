@@ -1,0 +1,91 @@
+
+<!-- This is the HTML document structure declaration -->
+<!DOCTYPE html>
+<!-- Opens the HTML document with language set to English -->
+<html lang="en">
+<head>
+    <!-- Defines character encoding for the document -->
+    <meta charset="UTF-8">
+    <!-- Ensures responsive behavior on different screen sizes -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Sets the title of the web page in the browser tab -->
+    <title>UX Persona - Filled Example</title>
+
+    <style>
+        /* Sets font family to Arial and centers content vertically and horizontally */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        /* Styles the persona card with padding, rounded corners, and a shadow effect */
+        .persona-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 500px;
+        }
+
+        /* Removes bullet points from the list */
+        ul {
+            list-style-type: none;
+            padding: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Declaring the Persona -->
+    <div class="persona-card">
+        <!-- Personas name -->
+        <h2 id="persona-name"> hi </h2>
+        <!-- Personas age -->
+        <p><strong>Age:</strong> <span id="persona-age"></span></p>
+        <!-- Occupation-->
+        <p><strong>Occupation:</strong> <span id="Persona Occupation"></span></span></p>
+        <!--Hobbies-->
+        <p><strong>Hobbies:</strong><span id="persona-Hobbies"></span></p>
+        <ul id="persona-skills">
+            <!-- JavaScript will insert skills here -->
+        </ul>
+    </div>
+
+    <script>
+        // Defining your persona
+        let userPersona = {
+            name: "Nicolle, Atlanta GA",
+            age: 25,
+            Occupation:"Senior UX Designer"
+            Hobbies: [
+                "Attending Festivals,Hiking,Traveling"
+            ]
+            
+        };
+
+        // Updates the HTML content to display the first persona’s details
+        document.getElementById("persona-name").innerText = userPersona.name;
+        document.getElementById("persona-age").innerText = userPersona.age;
+        document.getElementById("Persona-Hobbies").innerText = userPersona.Hobbies
+        // Selects the unordered list element for skills
+        let skillList = document.getElementById("persona-skills");
+
+        // Loops through the persona's skills and adds them as list items
+        for (let i = 0; i < userPersona.skills.length; i++) {
+            let listItem = document.createElement("li"); // Creates a new list item
+            listItem.textContent = `- ${userPersona.skills[i]}`; // Sets the text content
+            skillList.appendChild(listItem); // Appends the list item to the skills list
+        }
+
+        // Logs the introduction of both personas to the console
+        console.log(userPersona.introduce());
+        console.log(userPersona2.introduce());
+    </script>
+
+</body>
+</html>

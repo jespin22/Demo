@@ -1,0 +1,91 @@
+
+<!-- Document set up to HTML  -->
+<!DOCTYPE html>
+<!-- Opens the HTML document with language set to English -->
+<html lang="en">
+<head>
+    <!-- Defines character encoding for the document -->
+    <meta charset="UTF-8">
+    <!-- Makes it responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page tittle -->
+    <title>UX Persona - Nicolle</title>
+
+    <style>
+        /* Sets styles for the persona Card */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        /* Persona Styling */
+        .persona-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 500px;
+        }
+
+        /* Removes bullet points from the list */
+        ul {
+            list-style-type: none;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Declars the persona division -->
+    <div class="persona-card">
+        <!-- Personas name -->
+        <h2 id="persona-name"> hi </h2>
+        <!-- Personas Age -->
+        <p><strong>Age:</strong> <span id="persona-age">[Age]</span></p>
+        <!-- Personas Hobbies -->
+        <p><strong>Hobbies:</strong></p>
+        <ul id="persona-skills">
+            <!-- JavaScript will insert skills here -->
+        </ul>
+    </div>
+
+    <script>
+        // User Persona Info 
+        let userPersona = {
+            name: "Nicolle, Atlanta Ga",
+            age: 25,
+            Hobbies: ["Attending Festivals", "Hiking", "Traveling"],
+
+            // Function to introduce the persona with their name and skills
+            introduce: function() {
+                return `I'm ${this.name} and I specialize in ${this.Hobbies.join(", ")}.`;
+            }
+        };
+
+
+        // Updates the page for Nicolle's info 
+        document.getElementById("persona-name").innerText = userPersona.name;
+        document.getElementById("persona-age").innerText = userPersona.age;
+
+        // Selects the unordered list element for skills
+        let skillList = document.getElementById("persona-skills");
+
+        // loops the Nicolles Hobbies
+        for (let i = 0; i < userPersona.Hobbies.length; i++) {
+            let listItem = document.createElement("li"); // Creates a new list item
+            listItem.textContent = `- ${userPersona.Hobbies[i]}`; // Adds text
+            skillList.appendChild(listItem); // Adds to the list
+        }
+
+        // Logs the introduction for Nicolle
+        console.log(userPersona.introduce());
+        console.log(userPersona2.introduce());
+    </script>
+
+</body>
+</html>
